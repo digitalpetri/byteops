@@ -6,7 +6,7 @@
   <parent>
     <groupId>com.digitalpetri.util</groupId>
     <artifactId>byteops-parent</artifactId>
-    <version>0.1.0</version>
+    <version>0.1.1-SNAPSHOT</version>
   </parent>
 
   <artifactId>byteops-netty</artifactId>
