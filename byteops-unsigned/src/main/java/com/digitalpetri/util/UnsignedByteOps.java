@@ -117,7 +117,7 @@ public final class UnsignedByteOps<T> implements ByteOps<T> {
     setLong(bytes, index, value.longValue());
   }
 
-  //region ByteOps delegated methods
+  // region ByteOps delegated methods
 
   @Override
   public boolean getBoolean(T bytes, int index) {
@@ -155,6 +155,41 @@ public final class UnsignedByteOps<T> implements ByteOps<T> {
   }
 
   @Override
+  public boolean[] getBooleanArray(T bytes, int index, int length) {
+    return delegate.getBooleanArray(bytes, index, length);
+  }
+
+  @Override
+  public byte[] getByteArray(T bytes, int index, int length) {
+    return delegate.getByteArray(bytes, index, length);
+  }
+
+  @Override
+  public short[] getShortArray(T bytes, int index, int length) {
+    return delegate.getShortArray(bytes, index, length);
+  }
+
+  @Override
+  public int[] getIntArray(T bytes, int index, int length) {
+    return delegate.getIntArray(bytes, index, length);
+  }
+
+  @Override
+  public long[] getLongArray(T bytes, int index, int length) {
+    return delegate.getLongArray(bytes, index, length);
+  }
+
+  @Override
+  public float[] getFloatArray(T bytes, int index, int length) {
+    return delegate.getFloatArray(bytes, index, length);
+  }
+
+  @Override
+  public double[] getDoubleArray(T bytes, int index, int length) {
+    return delegate.getDoubleArray(bytes, index, length);
+  }
+
+  @Override
   public void setBoolean(T bytes, int index, boolean value) {
     delegate.setBoolean(bytes, index, value);
   }
@@ -189,6 +224,41 @@ public final class UnsignedByteOps<T> implements ByteOps<T> {
     delegate.setDouble(bytes, index, value);
   }
 
-  //endregion
+  @Override
+  public void setBooleanArray(T bytes, int index, boolean[] values) {
+    delegate.setBooleanArray(bytes, index, values);
+  }
+
+  @Override
+  public void setByteArray(T bytes, int index, byte[] values) {
+    delegate.setByteArray(bytes, index, values);
+  }
+
+  @Override
+  public void setShortArray(T bytes, int index, short[] values) {
+    delegate.setShortArray(bytes, index, values);
+  }
+
+  @Override
+  public void setIntArray(T bytes, int index, int[] values) {
+    delegate.setIntArray(bytes, index, values);
+  }
+
+  @Override
+  public void setLongArray(T bytes, int index, long[] values) {
+    delegate.setLongArray(bytes, index, values);
+  }
+
+  @Override
+  public void setFloatArray(T bytes, int index, float[] values) {
+    delegate.setFloatArray(bytes, index, values);
+  }
+
+  @Override
+  public void setDoubleArray(T bytes, int index, double[] values) {
+    delegate.setDoubleArray(bytes, index, values);
+  }
+
+  // endregion
 
 }
