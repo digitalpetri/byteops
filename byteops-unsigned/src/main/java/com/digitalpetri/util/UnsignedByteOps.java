@@ -74,6 +74,74 @@ public final class UnsignedByteOps<T> implements ByteOps<T> {
   }
 
   /**
+   * Get the {@link UByte} array at the given {@code index} in {@code bytes}.
+   *
+   * @param bytes the bytes to get the value from.
+   * @param index the index into {@code bytes} to get the value at.
+   * @param length the length of the array.
+   * @return the UByte array at the given {@code index}.
+   */
+  public UByte[] getUByteArray(T bytes, int index, int length) {
+    byte[] byteArray = delegate.getByteArray(bytes, index, length);
+    UByte[] uByteArray = new UByte[byteArray.length];
+    for (int i = 0; i < byteArray.length; i++) {
+      uByteArray[i] = UByte.valueOf(byteArray[i]);
+    }
+    return uByteArray;
+  }
+
+  /**
+   * Get the {@link UShort} array at the given {@code index} in {@code bytes}.
+   *
+   * @param bytes the bytes to get the value from.
+   * @param index the index into {@code bytes} to get the value at.
+   * @param length the length of the array.
+   * @return the UShort array at the given {@code index}.
+   */
+  public UShort[] getUShortArray(T bytes, int index, int length) {
+    short[] shortArray = delegate.getShortArray(bytes, index, length);
+    UShort[] uShortArray = new UShort[shortArray.length];
+    for (int i = 0; i < shortArray.length; i++) {
+      uShortArray[i] = UShort.valueOf(shortArray[i]);
+    }
+    return uShortArray;
+  }
+
+  /**
+   * Get the {@link UInteger} array at the given {@code index} in {@code bytes}.
+   *
+   * @param bytes the bytes to get the value from.
+   * @param index the index into {@code bytes} to get the value at.
+   * @param length the length of the array.
+   * @return the UInteger array at the given {@code index}.
+   */
+  public UInteger[] getUIntArray(T bytes, int index, int length) {
+    int[] intArray = delegate.getIntArray(bytes, index, length);
+    UInteger[] uIntArray = new UInteger[intArray.length];
+    for (int i = 0; i < intArray.length; i++) {
+      uIntArray[i] = UInteger.valueOf(intArray[i]);
+    }
+    return uIntArray;
+  }
+
+  /**
+   * Get the {@link ULong} array at the given {@code index} in {@code bytes}.
+   *
+   * @param bytes the bytes to get the value from.
+   * @param index the index into {@code bytes} to get the value at.
+   * @param length the length of the array.
+   * @return the ULong array at the given {@code index}.
+   */
+  public ULong[] getULongArray(T bytes, int index, int length) {
+    long[] longArray = delegate.getLongArray(bytes, index, length);
+    ULong[] uLongArray = new ULong[longArray.length];
+    for (int i = 0; i < longArray.length; i++) {
+      uLongArray[i] = ULong.valueOf(longArray[i]);
+    }
+    return uLongArray;
+  }
+
+  /**
    * Set the {@link UByte} value at the given {@code index} in {@code bytes}.
    *
    * @param bytes the bytes to set the value in.
@@ -115,6 +183,66 @@ public final class UnsignedByteOps<T> implements ByteOps<T> {
    */
   public void setULong(T bytes, int index, ULong value) {
     setLong(bytes, index, value.longValue());
+  }
+
+  /**
+   * Set the {@link UByte} array at the given {@code index} in {@code bytes}.
+   *
+   * @param bytes the bytes to set the values in.
+   * @param index the index into {@code bytes} to set the values at.
+   * @param values the UByte array to set.
+   */
+  public void setUByteArray(T bytes, int index, UByte[] values) {
+    byte[] byteArray = new byte[values.length];
+    for (int i = 0; i < values.length; i++) {
+      byteArray[i] = values[i].byteValue();
+    }
+    delegate.setByteArray(bytes, index, byteArray);
+  }
+
+  /**
+   * Set the {@link UShort} array at the given {@code index} in {@code bytes}.
+   *
+   * @param bytes the bytes to set the values in.
+   * @param index the index into {@code bytes} to set the values at.
+   * @param values the UShort array to set.
+   */
+  public void setUShortArray(T bytes, int index, UShort[] values) {
+    short[] shortArray = new short[values.length];
+    for (int i = 0; i < values.length; i++) {
+      shortArray[i] = values[i].shortValue();
+    }
+    delegate.setShortArray(bytes, index, shortArray);
+  }
+
+  /**
+   * Set the {@link UInteger} array at the given {@code index} in {@code bytes}.
+   *
+   * @param bytes the bytes to set the values in.
+   * @param index the index into {@code bytes} to set the values at.
+   * @param values the UInteger array to set.
+   */
+  public void setUIntArray(T bytes, int index, UInteger[] values) {
+    int[] intArray = new int[values.length];
+    for (int i = 0; i < values.length; i++) {
+      intArray[i] = values[i].intValue();
+    }
+    delegate.setIntArray(bytes, index, intArray);
+  }
+
+  /**
+   * Set the {@link ULong} array at the given {@code index} in {@code bytes}.
+   *
+   * @param bytes the bytes to set the values in.
+   * @param index the index into {@code bytes} to set the values at.
+   * @param values the ULong array to set.
+   */
+  public void setULongArray(T bytes, int index, ULong[] values) {
+    long[] longArray = new long[values.length];
+    for (int i = 0; i < values.length; i++) {
+      longArray[i] = values[i].longValue();
+    }
+    delegate.setLongArray(bytes, index, longArray);
   }
 
   // region ByteOps delegated methods
