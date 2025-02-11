@@ -71,6 +71,83 @@ public abstract class AbstractByteOps<T> implements ByteOps<T> {
   }
 
   @Override
+  public boolean[] getBooleanArray(T bytes, int index, int length) {
+    var value = new boolean[length];
+
+    for (int i = 0; i < length; i++) {
+      value[i] = getBoolean(bytes, index + i);
+    }
+
+    return value;
+  }
+
+  @Override
+  public byte[] getByteArray(T bytes, int index, int length) {
+    var value = new byte[length];
+
+    for (int i = 0; i < length; i++) {
+      value[i] = getByte(bytes, index + i);
+    }
+
+    return value;
+  }
+
+  @Override
+  public short[] getShortArray(T bytes, int index, int length) {
+    var value = new short[length];
+
+    for (int i = 0; i < length; i++) {
+      value[i] = getShort(bytes, index + i * 2);
+    }
+
+    return value;
+  }
+
+  @Override
+  public int[] getIntArray(T bytes, int index, int length) {
+    var value = new int[length];
+
+    for (int i = 0; i < length; i++) {
+      value[i] = getInt(bytes, index + i * 4);
+    }
+
+    return value;
+  }
+
+  @Override
+  public long[] getLongArray(T bytes, int index, int length) {
+    var value = new long[length];
+
+    for (int i = 0; i < length; i++) {
+      value[i] = getLong(bytes, index + i * 8);
+    }
+
+    return value;
+  }
+
+  @Override
+  public float[] getFloatArray(T bytes, int index, int length) {
+    var value = new float[length];
+
+    for (int i = 0; i < length; i++) {
+      value[i] = getFloat(bytes, index + i * 4);
+    }
+
+    return value;
+  }
+
+  @Override
+  public double[] getDoubleArray(T bytes, int index, int length) {
+    var value = new double[length];
+
+    for (int i = 0; i < length; i++) {
+      value[i] = getDouble(bytes, index + i * 8);
+    }
+
+    return value;
+  }
+
+  @Override
   public void setByte(T bytes, int index, byte value) {
     set(bytes, index, value);
   }
@@ -100,4 +177,52 @@ public abstract class AbstractByteOps<T> implements ByteOps<T> {
     setLong(bytes, index, Double.doubleToRawLongBits(value));
   }
 
+  @Override
+  public void setBooleanArray(T bytes, int index, boolean[] values) {
+    for (int i = 0; i < values.length; i++) {
+      setBoolean(bytes, index + i, values[i]);
+    }
+  }
+
+  @Override
+  public void setByteArray(T bytes, int index, byte[] values) {
+    for (int i = 0; i < values.length; i++) {
+      setByte(bytes, index + i, values[i]);
+    }
+  }
+
+  @Override
+  public void setShortArray(T bytes, int index, short[] values) {
+    for (int i = 0; i < values.length; i++) {
+      setShort(bytes, index + i * 2, values[i]);
+    }
+  }
+
+  @Override
+  public void setIntArray(T bytes, int index, int[] values) {
+    for (int i = 0; i < values.length; i++) {
+      setInt(bytes, index + i * 4, values[i]);
+    }
+  }
+
+  @Override
+  public void setLongArray(T bytes, int index, long[] values) {
+    for (int i = 0; i < values.length; i++) {
+      setLong(bytes, index + i * 8, values[i]);
+    }
+  }
+
+  @Override
+  public void setFloatArray(T bytes, int index, float[] values) {
+    for (int i = 0; i < values.length; i++) {
+      setFloat(bytes, index + i * 4, values[i]);
+    }
+  }
+
+  @Override
+  public void setDoubleArray(T bytes, int index, double[] values) {
+    for (int i = 0; i < values.length; i++) {
+      setDouble(bytes, index + i * 8, values[i]);
+    }
+  }
 }
