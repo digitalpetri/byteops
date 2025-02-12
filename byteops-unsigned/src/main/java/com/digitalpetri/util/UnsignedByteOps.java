@@ -358,7 +358,17 @@ public final class UnsignedByteOps<T> implements ByteOps<T> {
   }
 
   @Override
+  public void setBooleanArray(T bytes, int index, Boolean[] values) {
+    delegate.setBooleanArray(bytes, index, values);
+  }
+
+  @Override
   public void setByteArray(T bytes, int index, byte[] values) {
+    delegate.setByteArray(bytes, index, values);
+  }
+
+  @Override
+  public void setByteArray(T bytes, int index, Byte[] values) {
     delegate.setByteArray(bytes, index, values);
   }
 
@@ -368,7 +378,17 @@ public final class UnsignedByteOps<T> implements ByteOps<T> {
   }
 
   @Override
+  public void setShortArray(T bytes, int index, Short[] values) {
+    delegate.setShortArray(bytes, index, values);
+  }
+
+  @Override
   public void setIntArray(T bytes, int index, int[] values) {
+    delegate.setIntArray(bytes, index, values);
+  }
+
+  @Override
+  public void setIntArray(T bytes, int index, Integer[] values) {
     delegate.setIntArray(bytes, index, values);
   }
 
@@ -378,7 +398,17 @@ public final class UnsignedByteOps<T> implements ByteOps<T> {
   }
 
   @Override
+  public void setLongArray(T bytes, int index, Long[] values) {
+    delegate.setLongArray(bytes, index, values);
+  }
+
+  @Override
   public void setFloatArray(T bytes, int index, float[] values) {
+    delegate.setFloatArray(bytes, index, values);
+  }
+
+  @Override
+  public void setFloatArray(T bytes, int index, Float[] values) {
     delegate.setFloatArray(bytes, index, values);
   }
 
@@ -387,6 +417,10 @@ public final class UnsignedByteOps<T> implements ByteOps<T> {
     delegate.setDoubleArray(bytes, index, values);
   }
 
-  // endregion
+  @Override
+  public void setDoubleArray(T bytes, int index, Double[] values) {
+    delegate.setDoubleArray(bytes, index, values);
+  }
 
+  // endregion
 }
