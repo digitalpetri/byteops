@@ -185,7 +185,21 @@ public abstract class AbstractByteOps<T> implements ByteOps<T> {
   }
 
   @Override
+  public void setBooleanArray(T bytes, int index, Boolean[] values) {
+    for (int i = 0; i < values.length; i++) {
+      setBoolean(bytes, index + i, values[i]);
+    }
+  }
+
+  @Override
   public void setByteArray(T bytes, int index, byte[] values) {
+    for (int i = 0; i < values.length; i++) {
+      setByte(bytes, index + i, values[i]);
+    }
+  }
+
+  @Override
+  public void setByteArray(T bytes, int index, Byte[] values) {
     for (int i = 0; i < values.length; i++) {
       setByte(bytes, index + i, values[i]);
     }
@@ -199,7 +213,21 @@ public abstract class AbstractByteOps<T> implements ByteOps<T> {
   }
 
   @Override
+  public void setShortArray(T bytes, int index, Short[] values) {
+    for (int i = 0; i < values.length; i++) {
+      setShort(bytes, index + i * 2, values[i]);
+    }
+  }
+
+  @Override
   public void setIntArray(T bytes, int index, int[] values) {
+    for (int i = 0; i < values.length; i++) {
+      setInt(bytes, index + i * 4, values[i]);
+    }
+  }
+
+  @Override
+  public void setIntArray(T bytes, int index, Integer[] values) {
     for (int i = 0; i < values.length; i++) {
       setInt(bytes, index + i * 4, values[i]);
     }
@@ -213,6 +241,13 @@ public abstract class AbstractByteOps<T> implements ByteOps<T> {
   }
 
   @Override
+  public void setLongArray(T bytes, int index, Long[] values) {
+    for (int i = 0; i < values.length; i++) {
+      setLong(bytes, index + i * 8, values[i]);
+    }
+  }
+
+  @Override
   public void setFloatArray(T bytes, int index, float[] values) {
     for (int i = 0; i < values.length; i++) {
       setFloat(bytes, index + i * 4, values[i]);
@@ -220,7 +255,21 @@ public abstract class AbstractByteOps<T> implements ByteOps<T> {
   }
 
   @Override
+  public void setFloatArray(T bytes, int index, Float[] values) {
+    for (int i = 0; i < values.length; i++) {
+      setFloat(bytes, index + i * 4, values[i]);
+    }
+  }
+
+  @Override
   public void setDoubleArray(T bytes, int index, double[] values) {
+    for (int i = 0; i < values.length; i++) {
+      setDouble(bytes, index + i * 8, values[i]);
+    }
+  }
+
+  @Override
+  public void setDoubleArray(T bytes, int index, Double[] values) {
     for (int i = 0; i < values.length; i++) {
       setDouble(bytes, index + i * 8, values[i]);
     }
