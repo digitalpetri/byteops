@@ -49,14 +49,12 @@
 
     <!-- Dependencies -->
     <joou.version>0.9.4</joou.version>
+    <jspecify.version>1.0.0</jspecify.version>
     <netty.version>4.1.112.Final</netty.version>
 
     <!-- Test Dependencies -->
     <junit.version>5.10.2</junit.version>
     <slf4j.version>2.0.16</slf4j.version>
-
-    <!-- Annotations -->
-    <jspecify.version>1.0.0</jspecify.version>
 
     <!-- Plugin Dependencies -->
     <spotless-maven-plugin.version>3.0.0</spotless-maven-plugin.version>
