@@ -212,15 +212,6 @@ public interface ByteOps<T> {
   void setBooleanArray(T bytes, int index, boolean[] values);
 
   /**
-   * Set the Boolean array at the given {@code index} in {@code bytes}.
-   *
-   * @param bytes the bytes to set the values in.
-   * @param index the index into {@code bytes} to set the values at.
-   * @param values the Boolean array to set.
-   */
-  void setBooleanArray(T bytes, int index, Boolean[] values);
-
-  /**
    * Set the byte array at the given {@code index} in {@code bytes}.
    *
    * @param bytes the bytes to set the values in.
@@ -228,15 +219,6 @@ public interface ByteOps<T> {
    * @param values the byte array to set.
    */
   void setByteArray(T bytes, int index, byte[] values);
-
-  /**
-   * Set the Byte array at the given {@code index} in {@code bytes}.
-   *
-   * @param bytes the bytes to set the values in.
-   * @param index the index into {@code bytes} to set the values at.
-   * @param values the Byte array to set.
-   */
-  void setByteArray(T bytes, int index, Byte[] values);
 
   /**
    * Set the short array at the given {@code index} in {@code bytes}.
@@ -248,15 +230,6 @@ public interface ByteOps<T> {
   void setShortArray(T bytes, int index, short[] values);
 
   /**
-   * Set the Short array at the given {@code index} in {@code bytes}.
-   *
-   * @param bytes the bytes to set the values in.
-   * @param index the index into {@code bytes} to set the values at.
-   * @param values the Short array to set.
-   */
-  void setShortArray(T bytes, int index, Short[] values);
-
-  /**
    * Set the int array at the given {@code index} in {@code bytes}.
    *
    * @param bytes the bytes to set the values in.
@@ -264,15 +237,6 @@ public interface ByteOps<T> {
    * @param values the int array to set.
    */
   void setIntArray(T bytes, int index, int[] values);
-
-  /**
-   * Set the Integer array at the given {@code index} in {@code bytes}.
-   *
-   * @param bytes the bytes to set the values in.
-   * @param index the index into {@code bytes} to set the values at.
-   * @param values the Integer array to set.
-   */
-  void setIntArray(T bytes, int index, Integer[] values);
 
   /**
    * Set the long array at the given {@code index} in {@code bytes}.
@@ -284,15 +248,6 @@ public interface ByteOps<T> {
   void setLongArray(T bytes, int index, long[] values);
 
   /**
-   * Set the Long array at the given {@code index} in {@code bytes}.
-   *
-   * @param bytes the bytes to set the values in.
-   * @param index the index into {@code bytes} to set the values at.
-   * @param values the Long array to set.
-   */
-  void setLongArray(T bytes, int index, Long[] values);
-
-  /**
    * Set the float array at the given {@code index} in {@code bytes}.
    *
    * @param bytes the bytes to set the values in.
@@ -300,15 +255,6 @@ public interface ByteOps<T> {
    * @param values the float array to set.
    */
   void setFloatArray(T bytes, int index, float[] values);
-
-  /**
-   * Set the Float array at the given {@code index} in {@code bytes}.
-   *
-   * @param bytes the bytes to set the values in.
-   * @param index the index into {@code bytes} to set the values at.
-   * @param values the Float array to set.
-   */
-  void setFloatArray(T bytes, int index, Float[] values);
 
   /**
    * Set the double array at the given {@code index} in {@code bytes}.
@@ -319,6 +265,132 @@ public interface ByteOps<T> {
    */
   void setDoubleArray(T bytes, int index, double[] values);
 
+  // region Boxed Array Support
+
+  /**
+   * Get the Boolean array at the given {@code index} in {@code bytes}.
+   *
+   * @param bytes the bytes to get the value from.
+   * @param index the index into {@code bytes} to get the value at.
+   * @param length the length of the array.
+   * @return the Boolean array at the given {@code index}.
+   */
+  Boolean[] getBoxedBooleanArray(T bytes, int index, int length);
+
+  /**
+   * Get the Byte array at the given {@code index} in {@code bytes}.
+   *
+   * @param bytes the bytes to get the value from.
+   * @param index the index into {@code bytes} to get the value at.
+   * @param length the length of the array.
+   * @return the Byte array at the given {@code index}.
+   */
+  Byte[] getBoxedByteArray(T bytes, int index, int length);
+
+  /**
+   * Get the Short array at the given {@code index} in {@code bytes}.
+   *
+   * @param bytes the bytes to get the value from.
+   * @param index the index into {@code bytes} to get the value at.
+   * @param length the length of the array.
+   * @return the Short array at the given {@code index}.
+   */
+  Short[] getBoxedShortArray(T bytes, int index, int length);
+
+  /**
+   * Get the Integer array at the given {@code index} in {@code bytes}.
+   *
+   * @param bytes the bytes to get the value from.
+   * @param index the index into {@code bytes} to get the value at.
+   * @param length the length of the array.
+   * @return the Integer array at the given {@code index}.
+   */
+  Integer[] getBoxedIntArray(T bytes, int index, int length);
+
+  /**
+   * Get the Long array at the given {@code index} in {@code bytes}.
+   *
+   * @param bytes the bytes to get the value from.
+   * @param index the index into {@code bytes} to get the value at.
+   * @param length the length of the array.
+   * @return the Long array at the given {@code index}.
+   */
+  Long[] getBoxedLongArray(T bytes, int index, int length);
+
+  /**
+   * Get the Float array at the given {@code index} in {@code bytes}.
+   *
+   * @param bytes the bytes to get the value from.
+   * @param index the index into {@code bytes} to get the value at.
+   * @param length the length of the array.
+   * @return the Float array at the given {@code index}.
+   */
+  Float[] getBoxedFloatArray(T bytes, int index, int length);
+
+  /**
+   * Get the Double array at the given {@code index} in {@code bytes}.
+   *
+   * @param bytes the bytes to get the value from.
+   * @param index the index into {@code bytes} to get the value at.
+   * @param length the length of the array.
+   * @return the Double array at the given {@code index}.
+   */
+  Double[] getBoxedDoubleArray(T bytes, int index, int length);
+
+  /**
+   * Set the Boolean array at the given {@code index} in {@code bytes}.
+   *
+   * @param bytes the bytes to set the values in.
+   * @param index the index into {@code bytes} to set the values at.
+   * @param values the Boolean array to set.
+   */
+  void setBoxedBooleanArray(T bytes, int index, Boolean[] values);
+
+  /**
+   * Set the Byte array at the given {@code index} in {@code bytes}.
+   *
+   * @param bytes the bytes to set the values in.
+   * @param index the index into {@code bytes} to set the values at.
+   * @param values the Byte array to set.
+   */
+  void setBoxedByteArray(T bytes, int index, Byte[] values);
+
+  /**
+   * Set the Short array at the given {@code index} in {@code bytes}.
+   *
+   * @param bytes the bytes to set the values in.
+   * @param index the index into {@code bytes} to set the values at.
+   * @param values the Short array to set.
+   */
+  void setBoxedShortArray(T bytes, int index, Short[] values);
+
+  /**
+   * Set the Integer array at the given {@code index} in {@code bytes}.
+   *
+   * @param bytes the bytes to set the values in.
+   * @param index the index into {@code bytes} to set the values at.
+   * @param values the Integer array to set.
+   */
+  void setBoxedIntArray(T bytes, int index, Integer[] values);
+
+  /**
+   * Set the Long array at the given {@code index} in {@code bytes}.
+   *
+   * @param bytes the bytes to set the values in.
+   * @param index the index into {@code bytes} to set the values at.
+   * @param values the Long array to set.
+   */
+  void setBoxedLongArray(T bytes, int index, Long[] values);
+
+  /**
+   * Set the Float array at the given {@code index} in {@code bytes}.
+   *
+   * @param bytes the bytes to set the values in.
+   * @param index the index into {@code bytes} to set the values at.
+   * @param values the Float array to set.
+   */
+  void setBoxedFloatArray(T bytes, int index, Float[] values);
+
   /**
    * Set the Double array at the given {@code index} in {@code bytes}.
    *
@@ -326,5 +398,7 @@ public interface ByteOps<T> {
    * @param index the index into {@code bytes} to set the values at.
    * @param values the Double array to set.
    */
-  void setDoubleArray(T bytes, int index, Double[] values);
+  void setBoxedDoubleArray(T bytes, int index, Double[] values);
+
+  // endregion
 }
