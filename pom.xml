@@ -50,6 +50,7 @@
     <!-- Dependencies -->
     <joou.version>0.9.4</joou.version>
     <jspecify.version>1.0.0</jspecify.version>
+    <milo.version>1.0.8</milo.version>
     <netty.version>4.1.112.Final</netty.version>
 
     <!-- Test Dependencies -->
@@ -62,6 +63,7 @@
 
   <modules>
     <module>byteops</module>
+    <module>byteops-milo</module>
     <module>byteops-netty</module>
     <module>byteops-unsigned</module>
   </modules>
