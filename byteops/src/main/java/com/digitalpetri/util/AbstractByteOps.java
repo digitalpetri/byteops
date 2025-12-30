@@ -185,21 +185,7 @@ public abstract class AbstractByteOps<T> implements ByteOps<T> {
   }
 
   @Override
-  public void setBooleanArray(T bytes, int index, Boolean[] values) {
-    for (int i = 0; i < values.length; i++) {
-      setBoolean(bytes, index + i, values[i]);
-    }
-  }
-
-  @Override
   public void setByteArray(T bytes, int index, byte[] values) {
-    for (int i = 0; i < values.length; i++) {
-      setByte(bytes, index + i, values[i]);
-    }
-  }
-
-  @Override
-  public void setByteArray(T bytes, int index, Byte[] values) {
     for (int i = 0; i < values.length; i++) {
       setByte(bytes, index + i, values[i]);
     }
@@ -213,21 +199,7 @@ public abstract class AbstractByteOps<T> implements ByteOps<T> {
   }
 
   @Override
-  public void setShortArray(T bytes, int index, Short[] values) {
-    for (int i = 0; i < values.length; i++) {
-      setShort(bytes, index + i * 2, values[i]);
-    }
-  }
-
-  @Override
   public void setIntArray(T bytes, int index, int[] values) {
-    for (int i = 0; i < values.length; i++) {
-      setInt(bytes, index + i * 4, values[i]);
-    }
-  }
-
-  @Override
-  public void setIntArray(T bytes, int index, Integer[] values) {
     for (int i = 0; i < values.length; i++) {
       setInt(bytes, index + i * 4, values[i]);
     }
@@ -241,21 +213,7 @@ public abstract class AbstractByteOps<T> implements ByteOps<T> {
   }
 
   @Override
-  public void setLongArray(T bytes, int index, Long[] values) {
-    for (int i = 0; i < values.length; i++) {
-      setLong(bytes, index + i * 8, values[i]);
-    }
-  }
-
-  @Override
   public void setFloatArray(T bytes, int index, float[] values) {
-    for (int i = 0; i < values.length; i++) {
-      setFloat(bytes, index + i * 4, values[i]);
-    }
-  }
-
-  @Override
-  public void setFloatArray(T bytes, int index, Float[] values) {
     for (int i = 0; i < values.length; i++) {
       setFloat(bytes, index + i * 4, values[i]);
     }
@@ -268,10 +226,133 @@ public abstract class AbstractByteOps<T> implements ByteOps<T> {
     }
   }
 
+  // region Boxed Array Support
+
   @Override
-  public void setDoubleArray(T bytes, int index, Double[] values) {
+  public Boolean[] getBoxedBooleanArray(T bytes, int index, int length) {
+    var value = new Boolean[length];
+
+    for (int i = 0; i < length; i++) {
+      value[i] = getBoolean(bytes, index + i);
+    }
+
+    return value;
+  }
+
+  @Override
+  public Byte[] getBoxedByteArray(T bytes, int index, int length) {
+    var value = new Byte[length];
+
+    for (int i = 0; i < length; i++) {
+      value[i] = getByte(bytes, index + i);
+    }
+
+    return value;
+  }
+
+  @Override
+  public Short[] getBoxedShortArray(T bytes, int index, int length) {
+    var value = new Short[length];
+
+    for (int i = 0; i < length; i++) {
+      value[i] = getShort(bytes, index + i * 2);
+    }
+
+    return value;
+  }
+
+  @Override
+  public Integer[] getBoxedIntArray(T bytes, int index, int length) {
+    var value = new Integer[length];
+
+    for (int i = 0; i < length; i++) {
+      value[i] = getInt(bytes, index + i * 4);
+    }
+
+    return value;
+  }
+
+  @Override
+  public Long[] getBoxedLongArray(T bytes, int index, int length) {
+    var value = new Long[length];
+
+    for (int i = 0; i < length; i++) {
+      value[i] = getLong(bytes, index + i * 8);
+    }
+
+    return value;
+  }
+
+  @Override
+  public Float[] getBoxedFloatArray(T bytes, int index, int length) {
+    var value = new Float[length];
+
+    for (int i = 0; i < length; i++) {
+      value[i] = getFloat(bytes, index + i * 4);
+    }
+
+    return value;
+  }
+
+  @Override
+  public Double[] getBoxedDoubleArray(T bytes, int index, int length) {
+    var value = new Double[length];
+
+    for (int i = 0; i < length; i++) {
+      value[i] = getDouble(bytes, index + i * 8);
+    }
+
+    return value;
+  }
+
+  @Override
+  public void setBoxedBooleanArray(T bytes, int index, Boolean[] values) {
+    for (int i = 0; i < values.length; i++) {
+      setBoolean(bytes, index + i, values[i]);
+    }
+  }
+
+  @Override
+  public void setBoxedByteArray(T bytes, int index, Byte[] values) {
+    for (int i = 0; i < values.length; i++) {
+      setByte(bytes, index + i, values[i]);
+    }
+  }
+
+  @Override
+  public void setBoxedShortArray(T bytes, int index, Short[] values) {
+    for (int i = 0; i < values.length; i++) {
+      setShort(bytes, index + i * 2, values[i]);
+    }
+  }
+
+  @Override
+  public void setBoxedIntArray(T bytes, int index, Integer[] values) {
+    for (int i = 0; i < values.length; i++) {
+      setInt(bytes, index + i * 4, values[i]);
+    }
+  }
+
+  @Override
+  public void setBoxedLongArray(T bytes, int index, Long[] values) {
+    for (int i = 0; i < values.length; i++) {
+      setLong(bytes, index + i * 8, values[i]);
+    }
+  }
+
+  @Override
+  public void setBoxedFloatArray(T bytes, int index, Float[] values) {
+    for (int i = 0; i < values.length; i++) {
+      setFloat(bytes, index + i * 4, values[i]);
+    }
+  }
+
+  @Override
+  public void setBoxedDoubleArray(T bytes, int index, Double[] values) {
     for (int i = 0; i < values.length; i++) {
       setDouble(bytes, index + i * 8, values[i]);
     }
   }
+
+  // endregion
 }
