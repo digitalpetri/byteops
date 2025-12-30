@@ -37,8 +37,8 @@ public interface OrderedOps {
   long getLong(Function<Integer, Byte> getByte, int index);
 
   /**
-   * Set the bytes of a short value using the given {@code setByte} function, starting
-   * {@code index}.
+   * Set the bytes of a short value using the given {@code setByte} function, starting {@code
+   * index}.
    *
    * @param setByte a function that takes an index and a byte value to set.
    * @param index the index to start at.
@@ -47,8 +47,8 @@ public interface OrderedOps {
   void setShort(BiConsumer<Integer, Byte> setByte, int index, short value);
 
   /**
-   * Set the bytes of an int value using the given {@code setByte} function, starting at
-   * {@code index}.
+   * Set the bytes of an int value using the given {@code setByte} function, starting at {@code
+   * index}.
    *
    * @param setByte a function that takes an index and a byte value to set.
    * @param index the index to start at.
@@ -57,8 +57,8 @@ public interface OrderedOps {
   void setInt(BiConsumer<Integer, Byte> setByte, int index, int value);
 
   /**
-   * Set the bytes of a long value using the given {@code setByte} function, starting at
-   * {@code index}.
+   * Set the bytes of a long value using the given {@code setByte} function, starting at {@code
+   * index}.
    *
    * @param setByte a function that takes an index and a byte value to set.
    * @param index the index to start at.
@@ -103,8 +103,14 @@ public interface OrderedOps {
       long b5 = getByte.apply(index + 5) & 0xFF;
       long b6 = getByte.apply(index + 6) & 0xFF;
       long b7 = getByte.apply(index + 7) & 0xFF;
-      return (b0 << 56) | (b1 << 48) | (b2 << 40) | (b3 << 32)
-          | (b4 << 24) | (b5 << 16) | (b6 << 8) | b7;
+      return (b0 << 56)
+          | (b1 << 48)
+          | (b2 << 40)
+          | (b3 << 32)
+          | (b4 << 24)
+          | (b5 << 16)
+          | (b6 << 8)
+          | b7;
     }
 
     @Override
@@ -132,7 +138,6 @@ public interface OrderedOps {
       setByte.accept(index + 6, (byte) (value >> 8 & 0xFF));
       setByte.accept(index + 7, (byte) (value & 0xFF));
     }
-
   }
 
   /**
@@ -172,8 +177,14 @@ public interface OrderedOps {
       long b5 = getByte.apply(index + 5) & 0xFF;
       long b6 = getByte.apply(index + 6) & 0xFF;
       long b7 = getByte.apply(index + 7) & 0xFF;
-      return (b7 << 56) | (b6 << 48) | (b5 << 40) | (b4 << 32)
-          | (b3 << 24) | (b2 << 16) | (b1 << 8) | b0;
+      return (b7 << 56)
+          | (b6 << 48)
+          | (b5 << 40)
+          | (b4 << 32)
+          | (b3 << 24)
+          | (b2 << 16)
+          | (b1 << 8)
+          | b0;
     }
 
     @Override
@@ -201,7 +212,6 @@ public interface OrderedOps {
       setByte.accept(index + 6, (byte) (value >> 48 & 0xFF));
       setByte.accept(index + 7, (byte) (value >> 56 & 0xFF));
     }
-
   }
 
   /**
@@ -241,8 +251,14 @@ public interface OrderedOps {
       long b5 = getByte.apply(index + 5) & 0xFF;
       long b6 = getByte.apply(index + 6) & 0xFF;
       long b7 = getByte.apply(index + 7) & 0xFF;
-      return (b6 << 56) | (b7 << 48) | (b4 << 40) | (b5 << 32)
-          | (b2 << 24) | (b3 << 16) | (b0 << 8) | b1;
+      return (b6 << 56)
+          | (b7 << 48)
+          | (b4 << 40)
+          | (b5 << 32)
+          | (b2 << 24)
+          | (b3 << 16)
+          | (b0 << 8)
+          | b1;
     }
 
     @Override
@@ -270,7 +286,6 @@ public interface OrderedOps {
       setByte.accept(index + 6, (byte) (value >> 56 & 0xFF));
       setByte.accept(index + 7, (byte) (value >> 48 & 0xFF));
     }
-
   }
 
   /**
@@ -310,8 +325,14 @@ public interface OrderedOps {
       long b5 = getByte.apply(index + 5) & 0xFF;
       long b6 = getByte.apply(index + 6) & 0xFF;
       long b7 = getByte.apply(index + 7) & 0xFF;
-      return (b1 << 56) | (b0 << 48) | (b3 << 40) | (b2 << 32)
-          | (b5 << 24) | (b4 << 16) | (b7 << 8) | b6;
+      return (b1 << 56)
+          | (b0 << 48)
+          | (b3 << 40)
+          | (b2 << 32)
+          | (b5 << 24)
+          | (b4 << 16)
+          | (b7 << 8)
+          | b6;
     }
 
     @Override
@@ -339,7 +360,5 @@ public interface OrderedOps {
       setByte.accept(index + 6, (byte) (value & 0xFF));
       setByte.accept(index + 7, (byte) (value >> 8 & 0xFF));
     }
-
   }
-
 }
