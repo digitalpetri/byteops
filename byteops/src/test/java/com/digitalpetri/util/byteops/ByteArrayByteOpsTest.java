@@ -1,4 +1,4 @@
-package com.digitalpetri.util;
+package com.digitalpetri.util.byteops;
 
 import static java.nio.ByteOrder.BIG_ENDIAN;
 import static java.nio.ByteOrder.LITTLE_ENDIAN;

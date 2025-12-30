@@ -1,7 +1,9 @@
-package com.digitalpetri.util;
+package com.digitalpetri.util.byteops.unsigned;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import com.digitalpetri.util.byteops.ByteArrayByteOps;
+import com.digitalpetri.util.byteops.ByteOps;
 import org.joou.UByte;
 import org.joou.UInteger;
 import org.joou.ULong;

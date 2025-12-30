@@ -1,4 +1,4 @@
-package com.digitalpetri.util;
+package com.digitalpetri.util.byteops;
 
 /** {@link ByteOps} implementation that operates on byte arrays. */
 public final class ByteArrayByteOps extends AbstractByteOps<byte[]> {

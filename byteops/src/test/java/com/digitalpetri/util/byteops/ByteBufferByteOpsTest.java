@@ -1,4 +1,4 @@
-package com.digitalpetri.util;
+package com.digitalpetri.util.byteops;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;

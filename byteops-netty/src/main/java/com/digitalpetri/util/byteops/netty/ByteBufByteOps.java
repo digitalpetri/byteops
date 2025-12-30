@@ -1,5 +1,7 @@
-package com.digitalpetri.util;
+package com.digitalpetri.util.byteops.netty;
 
+import com.digitalpetri.util.byteops.AbstractByteOps;
+import com.digitalpetri.util.byteops.OrderedOps;
 import io.netty.buffer.ByteBuf;
 
 public final class ByteBufByteOps extends AbstractByteOps<ByteBuf> {
