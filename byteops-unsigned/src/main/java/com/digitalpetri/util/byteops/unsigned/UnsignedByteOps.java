@@ -1,5 +1,6 @@
-package com.digitalpetri.util;
+package com.digitalpetri.util.byteops.unsigned;
 
+import com.digitalpetri.util.byteops.ByteOps;
 import org.joou.UByte;
 import org.joou.UInteger;
 import org.joou.ULong;

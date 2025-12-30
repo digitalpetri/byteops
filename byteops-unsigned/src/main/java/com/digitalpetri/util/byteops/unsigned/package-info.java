@@ -1,4 +1,4 @@
 @NullMarked
-package com.digitalpetri.util;
+package com.digitalpetri.util.byteops.unsigned;
 
 import org.jspecify.annotations.NullMarked;

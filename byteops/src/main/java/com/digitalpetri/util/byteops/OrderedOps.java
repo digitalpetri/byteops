@@ -1,4 +1,4 @@
-package com.digitalpetri.util;
+package com.digitalpetri.util.byteops;
 
 import java.util.function.BiConsumer;
 import java.util.function.Function;

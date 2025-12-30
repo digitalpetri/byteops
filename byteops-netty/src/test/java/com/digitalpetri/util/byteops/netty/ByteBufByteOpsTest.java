@@ -1,5 +1,7 @@
-package com.digitalpetri.util;
+package com.digitalpetri.util.byteops.netty;
 
+import com.digitalpetri.util.byteops.AbstractByteOpsTest;
+import com.digitalpetri.util.byteops.ByteOps;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import java.nio.ByteOrder;

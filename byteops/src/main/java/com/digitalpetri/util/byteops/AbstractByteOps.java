@@ -1,4 +1,4 @@
-package com.digitalpetri.util;
+package com.digitalpetri.util.byteops;
 
 public abstract class AbstractByteOps<T> implements ByteOps<T> {
 

@@ -1,4 +1,4 @@
-package com.digitalpetri.util;
+package com.digitalpetri.util.byteops;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -9,7 +9,7 @@ import java.nio.ByteOrder;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
-abstract class AbstractByteOpsTest<T> {
+public abstract class AbstractByteOpsTest<T> {
 
   protected abstract T getBytes(byte[] bs);
 
