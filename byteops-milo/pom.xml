@@ -11,6 +11,12 @@
 
   <artifactId>byteops-milo</artifactId>
 
+  <name>ByteOps :: Milo</name>
+
+  <properties>
+    <javaModuleName>com.digitalpetri.util.byteops.milo</javaModuleName>
+  </properties>
+
   <dependencies>
     <dependency>
       <groupId>com.digitalpetri.util</groupId>

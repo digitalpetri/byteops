@@ -11,6 +11,12 @@
 
   <artifactId>byteops</artifactId>
 
+  <name>ByteOps :: Core</name>
+
+  <properties>
+    <javaModuleName>com.digitalpetri.util.byteops</javaModuleName>
+  </properties>
+
   <dependencies>
     <dependency>
       <groupId>org.jspecify</groupId>

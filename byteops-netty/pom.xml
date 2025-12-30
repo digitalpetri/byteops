@@ -11,6 +11,12 @@
 
   <artifactId>byteops-netty</artifactId>
 
+  <name>ByteOps :: Netty</name>
+
+  <properties>
+    <javaModuleName>com.digitalpetri.util.byteops.netty</javaModuleName>
+  </properties>
+
   <dependencies>
     <dependency>
       <groupId>com.digitalpetri.util</groupId>

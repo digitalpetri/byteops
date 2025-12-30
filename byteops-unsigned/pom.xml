@@ -11,6 +11,12 @@
 
   <artifactId>byteops-unsigned</artifactId>
 
+  <name>ByteOps :: Unsigned</name>
+
+  <properties>
+    <javaModuleName>com.digitalpetri.util.byteops.unsigned</javaModuleName>
+  </properties>
+
   <dependencies>
     <dependency>
       <groupId>com.digitalpetri.util</groupId>
