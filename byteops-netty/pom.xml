@@ -22,6 +22,10 @@
       <artifactId>netty-buffer</artifactId>
       <version>${netty.version}</version>
     </dependency>
+    <dependency>
+      <groupId>org.jspecify</groupId>
+      <artifactId>jspecify</artifactId>
+    </dependency>
 
     <dependency>
       <groupId>com.digitalpetri.util</groupId>
