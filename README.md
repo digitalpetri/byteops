@@ -21,7 +21,7 @@ Add the dependency to your `pom.xml`:
 <dependency>
   <groupId>com.digitalpetri.util</groupId>
   <artifactId>byteops</artifactId>
-  <version>0.1.4-SNAPSHOT</version>
+  <version>0.2.1</version>
 </dependency>
 ```
 
