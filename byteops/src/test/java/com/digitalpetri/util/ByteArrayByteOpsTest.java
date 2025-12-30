@@ -33,5 +33,4 @@ class ByteArrayByteOpsTest extends AbstractByteOpsTest<byte[]> {
       throw new IllegalArgumentException("unsupported byte order: " + byteOrder);
     }
   }
-
 }

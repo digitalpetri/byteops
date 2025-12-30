@@ -32,5 +32,4 @@ class ByteBufByteOpsTest extends AbstractByteOpsTest<ByteBuf> {
       throw new IllegalArgumentException("unsupported byte order: " + byteOrder);
     }
   }
-
 }
